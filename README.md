@@ -96,6 +96,10 @@ Power sensor:
 - `INA228_CURRENT`: 237.6
 - `INA228_SHUNT`: 0.0005
 
+## OSD
+
+- `MSP_OSD_CONFIG`: TELEM3
+
 ## BLHeli32
 
 Connect using Arduino Nano on ports D3, D4, D5, D6 and GND
