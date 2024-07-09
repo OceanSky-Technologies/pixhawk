@@ -63,17 +63,28 @@ To detect the board for firmware update remove the USB connection and plug it ba
 
 `Standard VTOL` -> `Generic Standard VTOL`
 
-## Motors
+## Radio
+
+- `AUX 1 Passthrough RC channel`: Channel 8
+
+## Actuators
 
 - Number of `Motors`: 4
-  - AUX1: Motor 1
-  - AUX2: Motor 2
-  - AUX3: MOTOR 3
-  - AUX4: MOTOR 4
 - `Control Surfaces`: 0
-- `DSHOT 1200`
+- `Lock control surfaces in hover`: Disabled
+
+- `PWM AUX`:
+  - `DSHOT 1200`
+  - `AUX 1`: Motor 1
+  - `AUX 2`: Motor 2
+  - `AUX 3`: MOTOR 3
+  - `AUX 4`: MOTOR 4
+  - `AUX 8`: RC AUX 1 (camera servo)
+
 - `DSHOT_MIN`: 0.04%
 - `DSHOT_TEL_CFG`: EXT2
+
+For testing servos while the aircraft is not armed enable `COM_PREARM_MODE`.
 
 ## RC input
 
