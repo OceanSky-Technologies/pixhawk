@@ -69,17 +69,38 @@ To detect the board for firmware update remove the USB connection and plug it ba
 
 ## Actuators
 
-- Number of `Motors`: 4
-- `Control Surfaces`: 0
-- `Lock control surfaces in hover`: Disabled
+- Number of Motors: 4
+  - Motor 1: 
+    - Position X: 0.3
+    - Position Y: 0.4
+    - Direction CCW: yes
+    - Upwards
+  - Motor 2: 
+    - Position X: -0.2
+    - Position Y: -0.4
+    - Direction CCW: yes
+    - Upwards
+  - Motor 3: 
+    - Position X: 0.3
+    - Position Y: -0.4
+    - Direction CCW: no
+    - Upwards
+  - Motor 4: 
+    - Position X: -0.2
+    - Position Y: 0.4
+    - Direction CCW: no
+    - Upwards
 
-- `PWM AUX`:
-  - `DSHOT 1200`
-  - `AUX 1`: Motor 1
-  - `AUX 2`: Motor 2
-  - `AUX 3`: MOTOR 3
-  - `AUX 4`: MOTOR 4
-  - `AUX 8`: RC AUX 1 (camera servo)
+- Control Surfaces: 0
+- Lock control surfaces in hover: Disabled
+
+- PWM AUX:
+  - DSHOT 1200
+  - AUX 1: Motor 1
+  - AUX 2: Motor 2
+  - AUX 3: MOTOR 3
+  - AUX 4: MOTOR 4
+  - AUX 8: RC AUX 1 (camera servo)
 
 - `DSHOT_MIN`: 0.04%
 - `DSHOT_TEL_CFG`: EXT2
@@ -89,6 +110,12 @@ For testing servos while the aircraft is not armed enable `COM_PREARM_MODE`.
 ## RC input
 
 - `RC_CRSF_PRT_CFG`: TELEM2
+
+## Kalman filter
+
+Adjust the IMU/FC position against the center of gravity:
+
+`EKF2_IMU_POS_X`: 0.3
 
 ## Sensors
 
@@ -104,8 +131,8 @@ Distance sensor:
 
 Power sensor:
 - `SENS_EN_INA228`: Enabled
-- `INA228_CURRENT`: 237.6
-- `INA228_SHUNT`: 0.0005
+- `INA228_CURRENT`: Leave at default (327.68)
+- `INA228_SHUNT`: Leave at default (0.0005)
 
 ## OSD
 
