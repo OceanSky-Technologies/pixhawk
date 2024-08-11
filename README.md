@@ -91,15 +91,12 @@ To detect the board for firmware update remove the USB connection and plug it ba
     - Direction CCW: no
     - Upwards
 
-- Control Surfaces: 0
-- Lock control surfaces in hover: Disabled
-
 - PWM AUX:
   - DSHOT 1200
   - AUX 1: Motor 1
   - AUX 2: Motor 2
-  - AUX 3: MOTOR 3
-  - AUX 4: MOTOR 4
+  - AUX 3: Motor 3
+  - AUX 4: Motor 4
   - AUX 8: RC AUX 1 (camera servo)
 
 - `DSHOT_MIN`: 0.04%
