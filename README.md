@@ -142,8 +142,6 @@ Adjust the IMU/FC position against the center of gravity:
 
 `EKF2_IMU_POS_X`: 0.3
 
-On STM32H7 processors like the Holybro Pixhawk 6X has increase the `IMU_GYRO_RATEMAX` to `2000` in order to decrease the control latency.
-
 ## Autotune the PID controller
 
 Use the `altitude` mode and run the steps described [here](https://docs.px4.io/main/en/config/autotune_mc.html).
