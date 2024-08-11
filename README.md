@@ -99,7 +99,6 @@ To detect the board for firmware update remove the USB connection and plug it ba
   - AUX 4: Motor 4
   - AUX 8: RC AUX 1 (camera servo)
 
-- `DSHOT_MIN`: 0.04%
 - `DSHOT_TEL_CFG`: EXT2
 
 For testing servos while the aircraft is not armed enable `COM_PREARM_MODE`.
