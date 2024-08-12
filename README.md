@@ -118,7 +118,9 @@ Power sensor:
 - `INA228_CURRENT`: Leave at default (327.68)
 - `INA228_SHUNT`: Leave at default (0.0005)
 
-Run the [Battery Voltage/Current Calibration](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/power.html) and configure the battery `Voltage Drop on Full Load` as described [here](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/power.html#advanced-power-settings).
+Skip the [Battery Voltage/Current Calibration](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/power.html) and configure the battery `Voltage Drop on Full Load` as described [here](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/power.html#advanced-power-settings).
+
+`Voltage Drop on Full Load` for Tattu LiPo: 0.4V per cell.
 
 ## Sensors
 
