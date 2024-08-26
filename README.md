@@ -71,25 +71,28 @@ To detect the board for firmware update remove the USB connection and plug it ba
 
 - Number of Motors: 4
   - Motor 1: 
-    - Position X: 0.3
-    - Position Y: 0.4
+    - Position X: 0.24
+    - Position Y: 0.48
     - Direction CCW: yes
     - Upwards
   - Motor 2: 
-    - Position X: -0.2
-    - Position Y: -0.4
+    - Position X: -0.27
+    - Position Y: -0.48
     - Direction CCW: yes
     - Upwards
   - Motor 3: 
-    - Position X: 0.3
-    - Position Y: -0.4
+    - Position X: 0.24
+    - Position Y: -0.48
     - Direction CCW: no
     - Upwards
   - Motor 4: 
-    - Position X: -0.2
-    - Position Y: 0.4
+    - Position X: -0.27
+    - Position Y: 0.48
     - Direction CCW: no
     - Upwards
+
+
+**DO NOT CHANGE THE MOTOR ROTATION CA_ROTOR[i]_AY as this makes the aircraft unstable!**
 
 - PWM AUX:
   - DSHOT 1200
@@ -138,11 +141,15 @@ Distance sensor:
 
 - `MSP_OSD_CONFIG`: TELEM3
 
-## Filter / control
+## Flight controller
 
 Adjust the IMU/FC position against the center of gravity:
 
-`EKF2_IMU_POS_X`: 0.3
+`EKF2_IMU_POS_X`: 0.15
+
+Also configure the flight controller pitch using
+
+`SENS_BOARD_Y_OFF`: 15 deg.
 
 ## Autotune the PID controller
 
