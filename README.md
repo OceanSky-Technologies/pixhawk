@@ -63,10 +63,6 @@ To detect the board for firmware update remove the USB connection and plug it ba
 
 `Quadcopter X` -> `Generic Quadcopter`
 
-## Radio
-
-- `AUX 1 Passthrough RC channel`: Channel 8
-
 ## Actuators
 
 - Number of Motors: 4
@@ -106,9 +102,15 @@ To detect the board for firmware update remove the USB connection and plug it ba
 
 For testing servos while the aircraft is not armed enable `COM_PREARM_MODE`.
 
-## RC input
+## RC / MAVLINK input
 
-- `RC_CRSF_PRT_CFG`: TELEM2
+Servo control:
+- `AUX 1 Passthrough RC channel`: Channel 8
+
+- `RC_CRSF_PRT_CFG`: TELEM1
+- `SER_TEL2_BAUD`: 460800 8N1
+- `MAV_0_CONFIG`: TELEM1
+- `MAV_0_RATE`: 9600 B/s
 
 # Failsafe
 

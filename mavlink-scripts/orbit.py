@@ -16,6 +16,12 @@ async def run():
             print("Drone discovered!")
             break
 
+    print("Waiting for drone to have a pose...")
+
+    attitude = await drone.telemetry.attitude_euler().__aiter__().__anext__()
+
+    print(f"{attitude}")
+
     print("Waiting for drone to have a global position estimate...")
     async for health in drone.telemetry.health():
         if health.is_global_position_ok and health.is_home_position_ok:
