@@ -20,9 +20,6 @@ First configure the target:
 make px4_fmu-v6x_default boardconfig
 ```
 
-Disable these drivers:
-- `rc_input` (needed to enable crossfire input for ELRS)
-
 Enable these drivers (some are enabled by default):
 - Barometer
   - `bmp388`
@@ -42,9 +39,12 @@ Enable these drivers (some are enabled by default):
   - `pmw3901`
 - Power monitor
   - `ina228`
+
+When having a dedicated telemetry transmission channel enable
 - RC
   - `crsf_rc`
-
+and disable
+- `rc_input`
 
 Then build the firmware with
 
@@ -69,21 +69,25 @@ To detect the board for firmware update remove the USB connection and plug it ba
   - Motor 1: 
     - Position X: 0.24
     - Position Y: 0.48
+    - Position Z: 0.05
     - Direction CCW: yes
     - Upwards
   - Motor 2: 
     - Position X: -0.27
     - Position Y: -0.48
+    - Position Z: -0.05
     - Direction CCW: yes
     - Upwards
   - Motor 3: 
     - Position X: 0.24
     - Position Y: -0.48
+    - Position Z: 0.05
     - Direction CCW: no
     - Upwards
   - Motor 4: 
     - Position X: -0.27
     - Position Y: 0.48
+    - Position Z: -0.05
     - Direction CCW: no
     - Upwards
 
@@ -107,9 +111,12 @@ For testing servos while the aircraft is not armed enable `COM_PREARM_MODE`.
 Servo control:
 - `AUX 1 Passthrough RC channel`: Channel 8
 
+**Separate MAVLINK telemetry channel:**
 - `RC_CRSF_PRT_CFG`: TELEM1
+
+**MAVLINK through ExpressLRS:**
 - `SER_TEL2_BAUD`: 460800 8N1
-- `MAV_0_CONFIG`: TELEM1
+- `MAV_0_CONFIG`: TELEM2
 - `MAV_0_RATE`: 9600 B/s
 
 # Failsafe

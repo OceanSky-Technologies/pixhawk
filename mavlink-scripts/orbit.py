@@ -4,8 +4,9 @@ import asyncio
 from mavsdk import System
 from mavsdk.action import OrbitYawBehavior
 
+
 async def run():
-    drone = System(mavsdk_server_address='localhost', port=50051)
+    drone = System(mavsdk_server_address="localhost", port=50051)
 
     print("Waiting for drone to connect ...")
 
@@ -42,18 +43,22 @@ async def run():
     await drone.action.takeoff()
     await asyncio.sleep(10)
 
-    print('Do orbit at 10m height from the ground')
-    orbit_height = position.absolute_altitude_m+10
+    print("Do orbit at 10m height from the ground")
+    orbit_height = position.absolute_altitude_m + 10
     yaw_behavior = OrbitYawBehavior.HOLD_FRONT_TANGENT_TO_CIRCLE
-    await drone.action.do_orbit(radius_m=10, # 30, negative radius=opposite direction
-                                velocity_ms=2,
-                                yaw_behavior=yaw_behavior,
-                                latitude_deg=53.552558,
-                                longitude_deg=10.288934,
-                                absolute_altitude_m=orbit_height)
-    await asyncio.sleep(60) # 120
+    await drone.action.do_orbit(
+        radius_m=30,  # 30, negative radius=opposite direction
+        velocity_ms=10,
+        yaw_behavior=yaw_behavior,
+        latitude_deg=53.626146,
+        longitude_deg=10.251314,
+        absolute_altitude_m=orbit_height,
+    )
+    await asyncio.sleep(60)  # 120
 
-    await drone.action.return_to_launch() #  drone will ascend to RTL_RETURN_ALT!
+    print("--- Returning to launch position")
+    await drone.action.return_to_launch()  #  drone will ascend to RTL_RETURN_ALT!
+
     print("--- Landing - waiting for disarm")
 
     async for armed in drone.telemetry.armed():
@@ -61,6 +66,7 @@ async def run():
             break
 
     print("Finished!")
+
 
 if __name__ == "__main__":
     # Start the main function
