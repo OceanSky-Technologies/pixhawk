@@ -158,7 +158,7 @@ Adjust the IMU/FC position against the center of gravity:
 
 Also configure the flight controller pitch using
 
-`SENS_BOARD_Y_OFF`: 15 deg.
+`SENS_BOARD_Y_OFF`: 30 deg.
 
 ## Autotune the PID controller
 
