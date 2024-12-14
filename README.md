@@ -115,8 +115,10 @@ Servo control:
 - `RC_CRSF_PRT_CFG`: TELEM1
 
 **MAVLINK through ExpressLRS:**
-- `SER_TEL2_BAUD`: 460800 8N1
-- `MAV_0_CONFIG`: TELEM2
+Connect the ELRS receiver to TELEM1 and configure it:
+
+- `SER_TEL1_BAUD`: 460800 8N1
+- `MAV_0_CONFIG`: TELEM1
 - `MAV_0_RATE`: 9600 B/s
 
 # Failsafe
