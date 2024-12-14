@@ -65,6 +65,8 @@ To detect the board for firmware update remove the USB connection and plug it ba
 
 ## Actuators
 
+Check the "advanced" box.
+
 - Number of Motors: 4
   - Motor 1: 
     - Position X: 0.24
@@ -121,6 +123,8 @@ Connect the ELRS receiver to TELEM1 and configure it:
 - `MAV_0_CONFIG`: TELEM1
 - `MAV_0_RATE`: 9600 B/s
 
+Reboot the flight controller afterwards (needed to make RC input work).
+
 # Failsafe
 
 Configure failsafe behavior and select a button to power off the motors.
@@ -131,6 +135,12 @@ Power sensor:
 - `SENS_EN_INA228`: Enabled
 - `INA228_CURRENT`: Leave at default (327.68)
 - `INA228_SHUNT`: Leave at default (0.0005)
+
+Battery:
+- Source: Power Module
+- Number of cells (in series): 6
+- Empty voltage (per cell): 3.5V
+- Full voltage (per cell): 4.2V
 
 Skip the [Battery Voltage/Current Calibration](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/power.html) and configure the battery `Voltage Drop on Full Load` as described [here](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/power.html#advanced-power-settings).
 
