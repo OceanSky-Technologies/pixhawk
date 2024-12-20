@@ -21,6 +21,7 @@ make px4_fmu-v6x_default boardconfig
 ```
 
 Enable these drivers (some are enabled by default):
+
 - Barometer
   - `bmp388`
   - InvenSense
@@ -41,6 +42,7 @@ Enable these drivers (some are enabled by default):
   - `ina228`
 
 When having a dedicated telemetry transmission channel enable
+
 - RC
   - `crsf_rc`
 and disable
@@ -53,6 +55,7 @@ make px4_fmu-v6x_default
 ```
 
 Uploading the firmware can be done 2 ways:
+
 1. Open `QGroundControl` -> `Vehicle Setup` -> `Firmware`
    1. Select `PX4 Pro` -> `Advanced Settings` -> `Custom Firmware File` and chose the `px4_fmu-v6x_default.px4` file from the `build/px4_fmu-v6x_default` folder.
 2. Using `make px4_fmu-v6x_default upload` (not working out of the box with WSL)
@@ -93,7 +96,6 @@ Check the "advanced" box.
     - Direction CCW: no
     - Upwards
 
-
 **DO NOT CHANGE THE MOTOR ROTATION CA_ROTOR[i]_AY as this makes the aircraft unstable!**
 
 - PWM AUX:
@@ -111,9 +113,11 @@ For testing servos while the aircraft is not armed enable `COM_PREARM_MODE`.
 ## RC / MAVLINK input
 
 Servo control:
+
 - `AUX 1 Passthrough RC channel`: Channel 8
 
 **Separate MAVLINK telemetry channel:**
+
 - `RC_CRSF_PRT_CFG`: TELEM1
 
 **MAVLINK through ExpressLRS:**
@@ -125,18 +129,20 @@ Connect the ELRS receiver to TELEM1 and configure it:
 
 Reboot the flight controller afterwards (needed to make RC input work).
 
-# Failsafe
+## Failsafe
 
 Configure failsafe behavior and select a button to power off the motors.
 
 ## Battery/Power module
 
 Power sensor:
+
 - `SENS_EN_INA228`: Enabled
 - `INA228_CURRENT`: Leave at default (327.68)
 - `INA228_SHUNT`: Leave at default (0.0005)
 
 Battery:
+
 - Source: Power Module
 - Number of cells (in series): 6
 - Empty voltage (per cell): 3.5V
@@ -149,13 +155,16 @@ Skip the [Battery Voltage/Current Calibration](https://docs.qgroundcontrol.com/m
 ## Sensors
 
 Air pressure:
+
 - `SENS_EN_MS4525DO`: Enabled
 
 Optical flow sensor:
+
 - `SENS_EN_PMW3901`: Enabled
 - Enable for state estimation: `EKF2_OF_CTRL`: Enabled
 
 Distance sensor:
+
 - `SENS_EN_VL53L1X`: Enabled
 
 ## OSD
@@ -171,6 +180,18 @@ Adjust the IMU/FC position against the center of gravity:
 Also configure the flight controller pitch using
 
 `SENS_BOARD_Y_OFF`: 30 deg.
+
+Increase the horizontal velocity of the aircraft:
+
+- `MPC_XY_CRUISE`: 65.0 km/h
+- `MPC_XY_VEL_MAX`: 65.0 km/h
+
+Do not use `MPC_XY_VEL_ALL`!
+
+The Skywinger frame oscillates at ~17.5 Hz (check FFT of IMU). Therefore enable a notch filter:
+
+- `IMU_GYRO_NF0_FRQ`: 17.5 Hz
+- `IMU_GYRO_NF0_BW`: 2.0 Hz
 
 ## Autotune the PID controller
 
