@@ -197,6 +197,27 @@ The Skywinger frame oscillates at ~17.5 Hz (check FFT of IMU). Therefore enable 
 
 Use the `altitude` mode and run the steps described [here](https://docs.px4.io/main/en/config/autotune_mc.html).
 
+## ExpressLRS
+
+Enable MAVLINK mode (latest firmware).
+
+Flash TX as RX module:
+
+- Make sure the TX is on the correct firmware
+- Go to the hardware page (elrs_tx.local/hardware.json)
+- Download that config
+- Flash a compatible RX firmware to the TX module
+- Load the config you saved
+
+Verify that the fan is working! (`"misc_fan_en": 2`).
+
+How do I know which RX firmware is compatible to the TX module?
+
+- the MCU should match
+- Check the target config to see what base target it uses: https://github.com/ExpressLRS/targets
+
+[Alternative approach](./elrs/Converting_an_Emax_Nano_Tx_to_a_Rx.pdf).
+
 ## BLHeli32
 
 Connect using Arduino Nano on ports D3, D4, D5, D6 and GND
