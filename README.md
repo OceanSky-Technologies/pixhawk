@@ -183,8 +183,9 @@ Also configure the flight controller pitch using
 
 Increase the horizontal velocity of the aircraft:
 
-- `MPC_XY_CRUISE`: 65.0 km/h
-- `MPC_XY_VEL_MAX`: 65.0 km/h
+- `MPC_XY_VEL_ALL`: 18 m/s
+- `FLW_TGT_MAX_VEL`: 18 m/s
+- `LNDMC_XY_VEL_MAX`: 18 m/s
 
 Do not use `MPC_XY_VEL_ALL`!
 
