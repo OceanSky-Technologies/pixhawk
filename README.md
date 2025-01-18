@@ -200,7 +200,7 @@ Reduce the default takeoff altitude:
 
 Increase the responsiveness when transitioning from one command to the next. This allows quicker orientation changes because otherwise the aircraft continues flying in the current direction when it actually should have turned to another direction.
 - `MPC_ACC_HOR`: 150 m/s^2
-- `MPC_ACC_HOR_MAX`: 200 m/s^2
+- `MPC_ACC_HOR_MAX`: 220 m/s^2
 
 The Skywinger frame oscillates at ~17.5 Hz (check FFT of IMU). Therefore enable a notch filter:
 
