@@ -183,24 +183,24 @@ Also configure the flight controller pitch using
 
 Increase the horizontal velocity of the aircraft:
 
-- `MPC_XY_VEL_ALL`: 25 m/s
-- `FLW_TGT_MAX_VEL`: 25 m/s
-- `LNDMC_XY_VEL_MAX`: 25 m/s
+- `MPC_XY_VEL_ALL`: 20 m/s
+- `FLW_TGT_MAX_VEL`: 20 m/s
+- `LNDMC_XY_VEL_MAX`: 20 m/s
 
-Increase the maximum tilt angle:
-- `MPC_MAN_TILT_MAX`: 60°
-- `MPC_TILTMAX_AIR`: 60°
+//Increase the maximum tilt angle:
+//- `MPC_MAN_TILT_MAX`: 60°
+//- `MPC_TILTMAX_AIR`: 60°
 
-Increase the fail detector angle:
-- `FD_FAIL_P`: 90°
-- `FD_FAIL_R`: 90°
+//Increase the fail detector angle:
+//- `FD_FAIL_P`: 90°
+//- `FD_FAIL_R`: 90°
 
 Reduce the default takeoff altitude:
 - `MIS_TAKEOFF_ALT`: 5 m
 
-Increase the responsiveness when transitioning from one command to the next. This allows quicker orientation changes because otherwise the aircraft continues flying in the current direction when it actually should have turned to another direction.
-- `MPC_ACC_HOR`: 150 m/s^2
-- `MPC_ACC_HOR_MAX`: 220 m/s^2
+//Increase the responsiveness when transitioning from one command to the next. This allows quicker orientation changes because otherwise the aircraft continues flying in the current direction when it actually should have turned to another direction.
+//- `MPC_ACC_HOR`: 150 m/s^2
+//- `MPC_ACC_HOR_MAX`: 220 m/s^2
 
 The Skywinger frame oscillates at ~17.5 Hz (check FFT of IMU). Therefore enable a notch filter:
 
