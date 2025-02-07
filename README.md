@@ -1,4 +1,6 @@
-# Pixhawk configuration
+# Pixhawk configuration for the skywinger drone
+
+Drone infos: <https://oceansky.tech/product-skywinger-aerofoil-drone/>
 
 ## Building the PX4 firmware
 
